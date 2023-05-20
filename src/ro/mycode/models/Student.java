@@ -1,25 +1,16 @@
-package ro.mycode;
+package ro.mycode.models;
 
-public class Student extends Person{
+import ro.mycode.models.Person;
+
+public class Student extends Person {
     private String facultate;
     private float medie;
     private int anStudiu;
 
 
-    public String descriereStudent(){
-        String text="";
-        text+="Eu sunt un student cu urmatoarele caracteristici: "+"\n";
-        text+="name: "+super.getName()+"\n";
-        text+="birthYear "+super.getBirthYear()+"\n";
-        text+="adress: "+super.getAdress()+"\n";
-        text+="facultate: "+this.facultate+"\n";
-        text+="medie: "+this.medie+"\n";
-        text+="an Studiu: "+this.anStudiu;
-        return text;
-    }
 
-    public Student(String name, int birthYear, String adress, String facultate, float medie, int anStudiu) {
-        super(name, birthYear, adress);
+    public Student(String type,String name, int birthYear, String adress, String facultate, float medie, int anStudiu) {
+        super(type,name, birthYear, adress);
         this.facultate = facultate;
         this.medie = medie;
         this.anStudiu = anStudiu;
@@ -68,5 +59,24 @@ public class Student extends Person{
 
     public void setAnStudiu(int anStudiu) {
         this.anStudiu = anStudiu;
+    }
+    public String descriereStudent(){
+        String text="";
+        text+="Eu sunt un student cu urmatoarele caracteristici: "+"\n";
+        text+="name: "+super.getName()+"\n";
+        text+="birthYear "+super.getBirthYear()+"\n";
+        text+="adress: "+super.getAdress()+"\n";
+        text+="facultate: "+this.facultate+"\n";
+        text+="medie: "+this.medie+"\n";
+        text+="an Studiu: "+this.anStudiu;
+        return text;
+    }
+
+    public Student(String prop){
+        super(prop);
+        String [] split=prop.split(",");
+        this.facultate=split[4];
+        this.medie=Float.parseFloat(split[5]);
+        this.anStudiu=Integer.parseInt(split[6]);
     }
 }
