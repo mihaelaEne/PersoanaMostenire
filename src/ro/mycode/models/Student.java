@@ -30,6 +30,7 @@ public class Student extends Person{
         this.facultate = facultate;
         this.medie = medie;
         this.anStudiu = anStudiu;
+
     }
 
     public Student(String name, String facultate, float medie, int anStudiu) {
