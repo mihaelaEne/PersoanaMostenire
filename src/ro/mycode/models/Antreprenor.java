@@ -78,4 +78,8 @@ public class Antreprenor extends Person{
 
     }
 
+    public String toSaveAntreprenor(){
+        return super.toSavePerson()+","+domeniuActivitate+","+companiiLaActiv+","+investitiiLunare;
+    }
+
 }

@@ -79,4 +79,7 @@ public class Student extends Person {
         this.medie=Float.parseFloat(split[5]);
         this.anStudiu=Integer.parseInt(split[6]);
     }
+
+    public String toSaveStudent(){
+        return super.toSavePerson()+","+facultate+","+medie+","+anStudiu;}
 }

@@ -48,13 +48,14 @@ public class PersonController {
         }
     }
 
-public void addPerson(Person person){
+    public void addPerson(Person person) {
         this.people.add(person);
-}
+    }
 
-public void removePerson(Person person){
+    public void removePerson(Person person) {
         this.people.remove(person);
-}
+    }
+
     public void afisarePersoana() {
 
         for (int i = 0; i < people.size(); i++) {
@@ -63,12 +64,12 @@ public void removePerson(Person person){
                 Angajat angajat = (Angajat) people.get(i);
                 System.out.println(angajat.descriereAngajat());
                 System.out.println("\n");
-            }else if(people.get(i) instanceof Antreprenor){
-                Antreprenor antreprenor=(Antreprenor) people.get(i);
+            } else if (people.get(i) instanceof Antreprenor) {
+                Antreprenor antreprenor = (Antreprenor) people.get(i);
                 System.out.println(antreprenor.descriereAntrp());
                 System.out.println("\n");
-            }else{
-                Student student=(Student) people.get(i);
+            } else {
+                Student student = (Student) people.get(i);
                 System.out.println(student.descriereStudent());
                 System.out.println("\n");
             }
@@ -76,35 +77,47 @@ public void removePerson(Person person){
         }
     }
 
-    public String toSave(){
-        String text="";
-        int i;
-        for(i=0;i<people.size();i++){
-            text+=people.get(i).toSave()+"\n";
+    public String toSave() {
+        String text = "";
+        for (int i = 0; i < people.size(); i++) {
+
+            if (people.get(i) instanceof Angajat) {
+                Angajat angajat = (Angajat) people.get(i);
+                text += angajat.toSaveAngajat() + "\n";
+            } else if (people.get(i) instanceof Antreprenor) {
+                Antreprenor antreprenor = (Antreprenor) people.get(i);
+                text += antreprenor.toSaveAntreprenor() + "\n";
+            } else {
+                Student student = (Student) people.get(i);
+                text += student.toSaveStudent() + "\n";
+            }
+
         }
-        text+=people.get(i).toSave();
+
         return text;
     }
 
 
-    public void save(){
+    public void save() {
         try {
             File file = new File("C:\\mycode\\OOP\\mostenirea\\Teme\\PersoanaMostenire\\src\\ro\\mycode\\data\\person.txt");
-            FileWriter fileWriter=new FileWriter(file);
-            PrintWriter printWriter=new PrintWriter(fileWriter);
+            FileWriter fileWriter = new FileWriter(file);
+            PrintWriter printWriter = new PrintWriter(fileWriter);
             printWriter.print(toSave());
             printWriter.close();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public Person findByName(String name){
-        for(int i=0; i<people.size();i++){
-            if(people.get(i).getName().equals(name)){
+    public Person findByName(String name) {
+        for (int i = 0; i < people.size(); i++) {
+            if (people.get(i).getName().equals(name)) {
                 return people.get(i);
             }
         }
         return null;
     }
 }
+
+

@@ -4,7 +4,9 @@ Angajat,Mihaela,2002,Bucuresti,researcher,Initiative,2600
 Antreprenor,Ionut,2000,Cluj,IT,2,2000
 Antreprenor,Ioana,1990,Brasov,Face-Care,1,1500
 Antreprenor,George,1760,Timisoara,Agricultura,3,8000
-Student,Veronica,2003,Bucuresti,Contabilitate,6,1
-Student,Mihaela,2002,Bucuresti,CSIE,6,2
-Student,Daria,2001,Galati,Drept,8,3
-
+Student,Veronica,2003,Bucuresti,Contabilitate,6.0,1
+Student,Mihaela,2002,Bucuresti,CSIE,6.0,2
+Student,Daria,2001,Galati,Drept,8.0,3
+type1-Angajat,Nume1-Angajat,2002,Adresa1-angajat,pozitiaOcupataInFirma,CpmpaniaLaCareLucreaza,2000
+TYPE2-aNTREPREN,numeAntrepr,1990,ADRESA-ANTRP,domeniul DE activitate,10,7
+type-Student,Nume-Student,2002,adresa student,CSIE,8.2,2

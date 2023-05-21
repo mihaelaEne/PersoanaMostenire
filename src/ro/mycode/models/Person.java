@@ -64,7 +64,7 @@ public class Person {
         this.adress = split[3];
     }
 
-    public String toSave() {
+    public String toSavePerson() {
         return type + "," + name + "," + birthYear + "," + adress;
     }
 

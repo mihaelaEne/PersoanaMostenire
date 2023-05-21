@@ -79,5 +79,9 @@ public class Angajat extends Person{
         this.salariu=Integer.parseInt(split[6]);
     }
 
+    public String toSaveAngajat(){
+        return super.toSavePerson()+","+pozitie+","+comapanie+","+salariu;
+    }
+
 }
 
